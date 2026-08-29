@@ -1,5 +1,6 @@
 ﻿using MauiAppMinhasCompras.Models;
 using SQLite;
+using System.Collections.ObjectModel;
 
 namespace MauiAppMinhasCompras.Helpers
 {
@@ -38,9 +39,14 @@ namespace MauiAppMinhasCompras.Helpers
 
         public Task<List<Produto>> Search(string q)
         {
-            string sql = "SELECT * Produto WHERE descricao LIKE '%" + q + "%'";
+            string sql = "SELECT * FROM Produto WHERE descricao LIKE '%" + q + "%'";
 
             return _conn.QueryAsync<Produto>(sql);
+        }
+
+        internal async Task<ObservableCollection<Produto>> GetAllProdutos()
+        {
+            throw new NotImplementedException();
         }
     }
 }
