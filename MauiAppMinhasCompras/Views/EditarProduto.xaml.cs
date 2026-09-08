@@ -22,7 +22,7 @@ public partial class EditarProduto : ContentPage
                 Preco = Convert.ToDouble(txt_preco.Text),
             };
 
-            await App.Db.Update(p); //insert pq esta fazendo um POST
+            await App.Db.Update(p); 
             await DisplayAlert("Sucesso,", "Registrado com Sucesso!", "Sucesso!");
             await Navigation.PopAsync();
 
